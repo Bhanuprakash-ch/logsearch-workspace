@@ -1,0 +1,50 @@
+---
+meta:
+  availability_zone: X_AWS_AZ
+  stemcell:
+    name: bosh-aws-xen-ubuntu-trusty-go_agent
+    version: 2941
+
+releases:
+- name: logsearch
+  version: latest
+- name: logsearch-for-cloudfoundry
+  version: latest
+
+name: logsearch
+director_uuid: X_DIRECTOR_UUID
+
+networks:
+- name: default 
+  type: manual
+  subnets:
+  - range: 10.10.7.0/24
+    gateway: 10.10.7.1
+    cloud_properties:
+       subnet: X_AWS_SUBNET
+       security_groups: [X_AWS_SG]
+    dns:
+    - 10.10.0.2
+    reserved:
+    - 10.10.7.2 - 10.10.7.9
+    static:
+    - 10.10.7.10 - 10.10.7.155
+
+properties:
+  push-kibana:
+    oauth2_client_secret: "c1oudc0w"
+  nats:
+    user: nats
+    password: X_CLIENT_PASS
+    machines: 
+      - 10.10.3.11
+  cloudfoundry:
+    skip_ssl_validation: true
+    system_domain: X_CF_DOMAIN
+    firehose_port: 443
+    firehose_user: admin
+    firehose_password: X_ADMIN_PASS
+    admin_username: admin
+    admin_password: X_ADMIN_PASS
+    admin_client_secret: X_CLIENT_PASS
+    api_access_security_group: X_AWS_SG
