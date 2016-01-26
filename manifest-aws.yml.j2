@@ -118,8 +118,8 @@ meta:
     version: latest
   - {}
   stemcell:
-    name: bosh-aws-xen-ubuntu-trusty-go_agent
-    version: 2941
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+    version: 3104
 name: logsearch
 networks:
 - name: default
@@ -339,8 +339,8 @@ resource_pools:
   name: tiny
   network: default
   stemcell:
-    name: bosh-aws-xen-ubuntu-trusty-go_agent
-    version: 2941
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+    version: 3104
 - cloud_properties:
     availability_zone: {{ X_AWS_AZ }}
     elbs: null
@@ -351,8 +351,8 @@ resource_pools:
   name: medium
   network: default
   stemcell:
-    name: bosh-aws-xen-ubuntu-trusty-go_agent
-    version: 2941
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+    version: 3104
 - cloud_properties:
     availability_zone: {{ X_AWS_AZ }}
     elbs: null
@@ -363,8 +363,8 @@ resource_pools:
   name: high_cpu
   network: default
   stemcell:
-    name: bosh-aws-xen-ubuntu-trusty-go_agent
-    version: 2941
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+    version: 3104
 - cloud_properties:
     availability_zone: {{ X_AWS_AZ }}
     elbs: null
@@ -375,8 +375,8 @@ resource_pools:
   name: high_memory
   network: default
   stemcell:
-    name: bosh-aws-xen-ubuntu-trusty-go_agent
-    version: 2941
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+    version: 3104
 update:
   canaries: 1
   canary_watch_time: 30000-600000
