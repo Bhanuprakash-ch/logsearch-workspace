@@ -2,8 +2,8 @@
 meta:
   availability_zone: X_AWS_AZ
   stemcell:
-    name: bosh-aws-xen-ubuntu-trusty-go_agent
-    version: 2941
+    name: bosh-aws-xen-hvm-ubuntu-trusty-go_agent
+    version: 3104
 
 releases:
 - name: logsearch
